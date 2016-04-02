@@ -10,9 +10,7 @@ namespace OfficeEvent.Classes
 	{
 		public event PlanningHandler Planning;
 
-		public void Emulation()
-		{
-			Employee[] staff =
+		Employee[] staff =
 			{
 				new Employee("Иван"),
 				new Employee("Пётр"),
@@ -20,6 +18,8 @@ namespace OfficeEvent.Classes
 				new Employee("Василий")
 			};
 
+		public void Emulation()
+		{
 			EmployeeComeEvent(staff[0], true);
 			EmployeeComeEvent(staff[1], true);
 			EmployeeComeEvent(staff[2], true);
@@ -32,11 +32,14 @@ namespace OfficeEvent.Classes
 
 		protected void EmployeeComeEvent(Employee empl, bool isCommingIn)
 		{
-			var e = Planning;
-			if (e != null)
-				e(new ActionEventArg(empl, isCommingIn ? ActionType.Come : ActionType.Gone));
-			System.Threading.Thread.Sleep(10500);
-
+			if (Planning != null)
+			{
+				if (isCommingIn)
+					Planning(new ActionEventArg(empl, ActionType.Come));
+				else
+					Planning(new ActionEventArg(empl, ActionType.Gone));
+			}
+			System.Threading.Thread.Sleep(10400);
         }
 
 	}
