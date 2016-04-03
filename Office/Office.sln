@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Office", "Office\Office.csproj", "{A963F754-5A70-40E0-8FB1-DAE7D6A46510}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeEvent", "Office\OfficeEvent.csproj", "{A963F754-5A70-40E0-8FB1-DAE7D6A46510}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
